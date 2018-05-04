@@ -3,3 +3,6 @@
 .dll
 .jar
 .directory
+wasKochen/venv/
+wasKochen/__pycache__/
+wasKochen/.idea
