@@ -14,7 +14,12 @@ def returnjsonmock():
 
 
 def getgericht():
-
     return json.dumps({"meals": getallmeals()})
+
+
+def getingredients(username):
+    return json.dumps(getingredientsforuser(username))
+
+
 
 

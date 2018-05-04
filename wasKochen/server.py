@@ -14,6 +14,9 @@ def main():
 def test():
     return getgericht()
 
+@app.route("/geting/<user>")
+def geting(user):
+    return getingredients(user)
 
 
 if __name__=="__main__":
