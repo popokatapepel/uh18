@@ -10,6 +10,11 @@ app=Flask(__name__)
 def main():
     return returnjsonmock()
 
+@app.route("/test")
+def test():
+    return getgericht()
+
+
 
 if __name__=="__main__":
     app.run(host='0.0.0.0')
