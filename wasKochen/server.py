@@ -19,9 +19,10 @@ def geting(user):
     return jsonify(getingredients(user))
 
 
-@app.route("/possible_meals/<user>")
-def getmeals(user):
-    return jsonify(getpossiblemeals(user))
+@app.route("/possible_meals")
+def getmeals():
+    users=request.args.getlist('user')
+    return jsonify(getpossiblemeals(users))
 
 
 @app.route('/data')

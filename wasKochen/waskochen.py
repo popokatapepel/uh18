@@ -38,8 +38,10 @@ def getingsetsformeals():
         l.append((xx["id"],xx["name"],s))
     return l
 
-def getsetpossiblemealsforuser(user):
-    fridgeset=getingredientsetforuser(user)
+def getsetpossiblemealsforuser(users):
+    fridgeset=set()
+    for u in users:
+        fridgeset=fridgeset.union(getingredientsetforuser(u))
     meals=getingsetsformeals()
     s=set()
     for m in meals:
@@ -48,10 +50,10 @@ def getsetpossiblemealsforuser(user):
     return s
 
 '''
-gibt eine liste von dicts von möglichen gerichten für einen user a
+gibt eine liste von dicts von möglichen gerichten für einen oder mehere user a
 '''
-def getpossiblemeals(user):
-    s=getsetpossiblemealsforuser(user)
+def getpossiblemeals(users):
+    s=getsetpossiblemealsforuser(users)
     ids=[ss[0] for ss in s]
     meals=getmeals(ids)
     return meals
