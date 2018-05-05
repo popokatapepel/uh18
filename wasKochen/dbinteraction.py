@@ -26,7 +26,7 @@ def getallmeals():
 
         l.append(copy.deepcopy(d))
     conn.close()
-    return l7
+    return l
 
 
 '''

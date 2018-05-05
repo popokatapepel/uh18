@@ -3,20 +3,20 @@
 
 from waskochen import *
 
-from flask import Flask, render_template
+from flask import Flask, jsonify
 app=Flask(__name__)
 
 @app.route("/")
 def main():
-    return returnjsonmock()
+    return jsonify(returnjsonmock())
 
 @app.route("/test")
 def test():
-    return getgericht()
+    return jsonify(getgericht())
 
 @app.route("/geting/<user>")
 def geting(user):
-    return getingredients(user)
+    return jsonify(getingredients(user))
 
 
 if __name__=="__main__":
